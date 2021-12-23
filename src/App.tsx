@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Button } from './components/atoms/button';
+import { Button } from './components/atoms/Button';
 
 function App() {
   return (
