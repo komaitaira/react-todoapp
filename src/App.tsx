@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { PrimaryButton } from './components/atoms/PrimaryButton';
+import { AddButton } from './components/atoms/AddButton';
+import { DeleteButton } from './components/atoms/DeleteButton';
 
 function App() {
   return (
     <div className="App">
-      <PrimaryButton>追加</PrimaryButton>
+      <AddButton>追加</AddButton>
+      <DeleteButton>削除</DeleteButton>
     </div>
   );
 }
