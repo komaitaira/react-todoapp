@@ -1,16 +1,10 @@
 import { Button } from "./Button";
 import styled from "styled-components";
-import { ReactNode, VFC } from "react";
+import { VFC } from "react";
+import { Todo } from "../../types/todo";
 
-type Props = {
-    children: ReactNode;
-    todoText: string;
-    incompletedTodo: string[];
-    setTodoText: React.Dispatch<React.SetStateAction<string>>;
-    setIncompetedTodo: React.Dispatch<React.SetStateAction<string[]>>;
-};
-export const AddButton: VFC<Props> = (props) => {
-    const { incompletedTodo, setIncompetedTodo, children, todoText, setTodoText } = props;
+export const AddButton: VFC<Todo> = (props) => {
+    const { children, incompletedTodo, setIncompetedTodo, todoText, setTodoText } = props;
     const onClickAdd = () => {
         if (todoText === "") {
             alert("文字を入力してください");

@@ -1,10 +1,7 @@
-import { VFC } from "react";
 import styled from "styled-components";
-type Props = {
-    todoText: string;
-    setTodoText: React.Dispatch<React.SetStateAction<string>>;
-};
-export const InputBox: VFC<Props> = (props) => {
+import { Todo } from "../../types/todo";
+
+export const InputBox = (props: Pick<Todo, "todoText" | "setTodoText">) => {
     const { todoText, setTodoText } = props;
     const onChangeTodoText = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { target } = event;
