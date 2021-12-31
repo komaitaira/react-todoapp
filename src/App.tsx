@@ -8,7 +8,7 @@ import { Todo } from "./components/molecules/Todo";
 function App() {
     const [incompletedTodo, setIncompetedTodo] = useState<string[]>([]);
     const [completedTodo, setCompletedTodo] = useState<string[]>([]);
-    const [todoText, setTodoText] = useState("");
+    const [todoText, setTodoText] = useState<string>("");
     return (
         <div className="App">
             <h1>Todoリスト</h1>
