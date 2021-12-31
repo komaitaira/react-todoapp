@@ -11,12 +11,19 @@ type TodoType = {
     incompletedTodo: string[];
     setIncompetedTodo: React.Dispatch<React.SetStateAction<string[]>>;
     completedTodo: string[];
-    setCompletedTodo : React.Dispatch<React.SetStateAction<string[]>>;
+    setCompletedTodo: React.Dispatch<React.SetStateAction<string[]>>;
     index: number;
 };
 export const Todo: VFC<TodoType> = (props) => {
-    const { children, completed, incompletedTodo, setIncompetedTodo, completedTodo, setCompletedTodo, index } =
-        props;
+    const {
+        children,
+        completed,
+        incompletedTodo,
+        setIncompetedTodo,
+        completedTodo,
+        setCompletedTodo,
+        index,
+    } = props;
     let buttons = null;
     if (completed) {
         buttons = (
@@ -40,7 +47,17 @@ export const Todo: VFC<TodoType> = (props) => {
             </>
         );
     } else {
-        buttons = <BackButton>戻す</BackButton>;
+        buttons = (
+            <BackButton
+                incompletedTodo={incompletedTodo}
+                setIncompetedTodo={setIncompetedTodo}
+                completedTodo={completedTodo}
+                setCompletedTodo={setCompletedTodo}
+                index={index}
+            >
+                戻す
+            </BackButton>
+        );
     }
     return (
         <STodo>
