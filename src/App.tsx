@@ -25,9 +25,9 @@ function App() {
             </Area>
             <Area title="一覧">
                 <ul>
-                    {incompletedTodo.map((todo) => {
+                    {incompletedTodo.map((todo, index) => {
                         return (
-                            <Todo key={todo} completed={true}>
+                            <Todo key={todo} completed={true} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
                                 {todo}
                             </Todo>
                         );
@@ -36,9 +36,9 @@ function App() {
             </Area>
             <Area title="完了">
                 <ul>
-                    {completedTodo.map((todo) => {
+                    {completedTodo.map((todo, index) => {
                         return (
-                            <Todo key={todo} completed={false}>
+                            <Todo key={todo} completed={false} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
                                 {todo}
                             </Todo>
                         );

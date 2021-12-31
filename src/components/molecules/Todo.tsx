@@ -8,15 +8,20 @@ import { List } from "../atoms/List";
 type TodoType = {
     children: ReactNode;
     completed: boolean;
+    incompletedTodo: string[];
+    setIncompetedTodo: React.Dispatch<React.SetStateAction<string[]>>;
+    index: number;
 };
 export const Todo: VFC<TodoType> = (props) => {
-    const { children, completed } = props;
+    const { children, completed, incompletedTodo, setIncompetedTodo, index } = props;
     let buttons = null;
     if (completed) {
         buttons = (
             <>
                 <CompleteButton>完了</CompleteButton>
-                <DeleteButton>削除</DeleteButton>
+                <DeleteButton incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
+                    削除
+                </DeleteButton>
             </>
         );
     } else {
