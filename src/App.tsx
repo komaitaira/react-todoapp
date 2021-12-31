@@ -27,7 +27,7 @@ function App() {
                 <ul>
                     {incompletedTodo.map((todo, index) => {
                         return (
-                            <Todo key={todo} completed={true} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
+                            <Todo key={todo} completed={true} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} completedTodo={completedTodo} setCompletedTodo={setCompletedTodo} index={index}>
                                 {todo}
                             </Todo>
                         );
@@ -38,7 +38,7 @@ function App() {
                 <ul>
                     {completedTodo.map((todo, index) => {
                         return (
-                            <Todo key={todo} completed={false} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
+                            <Todo key={todo} completed={false} incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} completedTodo={completedTodo} setCompletedTodo={setCompletedTodo} index={index}>
                                 {todo}
                             </Todo>
                         );

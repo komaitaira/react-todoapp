@@ -10,16 +10,31 @@ type TodoType = {
     completed: boolean;
     incompletedTodo: string[];
     setIncompetedTodo: React.Dispatch<React.SetStateAction<string[]>>;
+    completedTodo: string[];
+    setCompletedTodo : React.Dispatch<React.SetStateAction<string[]>>;
     index: number;
 };
 export const Todo: VFC<TodoType> = (props) => {
-    const { children, completed, incompletedTodo, setIncompetedTodo, index } = props;
+    const { children, completed, incompletedTodo, setIncompetedTodo, completedTodo, setCompletedTodo, index } =
+        props;
     let buttons = null;
     if (completed) {
         buttons = (
             <>
-                <CompleteButton>完了</CompleteButton>
-                <DeleteButton incompletedTodo={incompletedTodo} setIncompetedTodo={setIncompetedTodo} index={index}>
+                <CompleteButton
+                    incompletedTodo={incompletedTodo}
+                    setIncompetedTodo={setIncompetedTodo}
+                    completedTodo={completedTodo}
+                    setCompletedTodo={setCompletedTodo}
+                    index={index}
+                >
+                    完了
+                </CompleteButton>
+                <DeleteButton
+                    incompletedTodo={incompletedTodo}
+                    setIncompetedTodo={setIncompetedTodo}
+                    index={index}
+                >
                     削除
                 </DeleteButton>
             </>
